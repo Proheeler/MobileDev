@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'buttons.dart';
+import 'leisure.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(LeisureApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -63,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'pounds (lbs)',
     'ounces',
   ];
+  final double defaultPadding = 5.0;
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -92,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void emptyMethod() {}
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -109,6 +113,37 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Center(
                             child: Column(
                           children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(defaultPadding),
+                                ),
+                                Expanded(
+                                    child: ProductivityButton(
+                                        color: Color(0xff009688),
+                                        text: "Work",
+                                        onPressed: emptyMethod)),
+                                Padding(
+                                  padding: EdgeInsets.all(defaultPadding),
+                                ),
+                                Expanded(
+                                    child: ProductivityButton(
+                                        color: Color(0xff607D8B),
+                                        text: "Short Break",
+                                        onPressed: emptyMethod)),
+                                Padding(
+                                  padding: EdgeInsets.all(defaultPadding),
+                                ),
+                                Expanded(
+                                    child: ProductivityButton(
+                                        color: Color(0xff455A64),
+                                        text: "Long Break",
+                                        onPressed: emptyMethod)),
+                                Padding(
+                                  padding: EdgeInsets.all(defaultPadding),
+                                ),
+                              ],
+                            ),
                             Padding(
                               padding: EdgeInsets.all(10),
                               child: Text(
@@ -163,6 +198,29 @@ class _MyHomePageState extends State<MyHomePage> {
                                 });
                               },
                             ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(defaultPadding),
+                                ),
+                                Expanded(
+                                    child: ProductivityButton(
+                                        color: Color(0xff212121),
+                                        text: 'Stop',
+                                        onPressed: emptyMethod)),
+                                Padding(
+                                  padding: EdgeInsets.all(defaultPadding),
+                                ),
+                                Expanded(
+                                    child: ProductivityButton(
+                                        color: Color(0xff009688),
+                                        text: 'Restart',
+                                        onPressed: emptyMethod)),
+                                Padding(
+                                  padding: EdgeInsets.all(defaultPadding),
+                                ),
+                              ],
+                            )
                           ],
                         )))))));
   }
